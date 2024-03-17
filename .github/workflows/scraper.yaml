@@ -12,6 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - run: 'set +B'
       - run: 'echo "${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}" > key.json'
       # Not the best way to handle these secrets lol
       - run: 'cat key.json'
