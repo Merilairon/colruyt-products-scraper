@@ -18,7 +18,7 @@ func CompareTodayToPrevious() (
 		return "", err
 	}
 	today := time.Now().In(time.UTC).Format("2006-01-02")
-	if !strings.HasPrefix(latestKey, shared.GCSBucket+"/"+today) {
+	if !strings.HasPrefix(latestKey, "colruyt-products"+"/"+today) {
 		return "", fmt.Errorf("no file found for today, last file: %q, today: %q", latestKey, today)
 	}
 
